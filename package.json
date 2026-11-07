@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "mkdir -p dist && cp photo_prep_v1.0.html dist/index.html",
+    "check": "node scripts/guard.mjs",
+    "test": "node --test",
+    "slim:dead": "node scripts/guard.mjs --assets"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
