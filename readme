@@ -1,1 +1,9 @@
+我要開一個新 GitHub repo 做「相片預備工具」公開工具站，唔該跟以下規格開工：
 
+【背景】我哋嘅真理倉係 github.com/playerkousas-rgb/readme，入面 templates/iconmaker/photo_prep_v1.0.html 已經有一份做好、通過靜態審計嘅 Type A 單一 HTML 工具（上載相 → 瀏覽器本地壓到目標 KB（預設 500KB）／轉 JPEG·WebP·PNG／揀最長邊／前後大小對照，相重新編碼時 EXIF 自動移除）。
+
+【要做】① 將 photo_prep_v1.0.html 抄入新 repo 做主頁，保留檔內雙版號（檔名＋內文，readme docs/13 規矩）；② 加 README（用途、點用、限制：做唔到無損壓縮、壓得太細會起格，寫明）；③ 加 .gitignore 同真理倉 scripts 入面嘅 guard/audit 檢查（照真理倉 templates/README.md 嘅一鍵抄指令）；④ 用 Vercel 部署做公開靜態站，唔使登入就用到；⑤ 交付加 © SCOUT SYSTEM（真理倉 W1 規矩）。
+
+【紅線】唔加 AI（壓縮、轉格式、去 EXIF 係死運算，唔好 call 任何模型）；唔起後端、絕對唔好將用戶嘅相上載去任何 server（全部喺用戶瀏覽器本地處理，相唔離開部機係呢個工具最大賣點，寫入 README 當承諾）；唔加模板以外嘅新功能（唔做 AI 修圖、唔做放大修復）；唔好喺真理倉改模板當交付，改動喺新 repo 做。
+
+【驗收】交付前跑 audit_single_html 要 PASS；跟住實試：JPEG/WebP/PNG 三種格式各出一張、目標 500KB 壓唔壓得入、壓完用工具驗 EXIF 真係冇咗、手機瀏覽器開唔開到同順唔順——測完將結果寫入新 repo README，未測到嘅明寫未測，唔好扮測咗。
